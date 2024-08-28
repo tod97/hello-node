@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "docker-build": "docker build -t hello-node .",
+    "docker-run": "docker run -dp 127.0.0.1:3000:3000 hello-node"
   },
   "keywords": [],
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
