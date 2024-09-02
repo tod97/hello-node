@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Fetch') {
+            steps {
+                git 'https://github.com/tod97/hello-node.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    docker.build('hello-node')
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    docker.image('hello-node').run('-p 3000:3000')
+                }
+            }
+        }
+    }
+}
