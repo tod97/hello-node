@@ -5,7 +5,7 @@ pipeline {
         stage('Fetch') {
             steps {
                 git branch: 'main', 
-                url 'https://github.com/tod97/hello-node.git'
+                url: 'https://github.com/tod97/hello-node.git'
             }
         }
         stage('Build') {
